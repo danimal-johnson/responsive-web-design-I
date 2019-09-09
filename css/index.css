@@ -1,5 +1,5 @@
 
-
+/*** Original CSS provided for project ***/
 .container {
   width: 880px;
   /* TB LR */
@@ -101,13 +101,19 @@ footer {
   font-size: 14px;
 }
 
-/* *********** New additions for this project ************ */
+/*** New Code ***/
+/* Replacing block elements with flex elements */
 
 header {
 	display: flex;
-	justify-content: space-between;
+    justify-content: space-between;
+    align-items: center;
 }
-
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
 .cta {
 	display: flex;
 	justify-content: space-between;
@@ -174,16 +180,78 @@ li {
   list-style-type: square;
 }
 
+/******* Responsive Design ********/
+.logo-top {
+    display: none;
+}
+.logo-corner {
+    width: 183px;
+    height: 36px;
+
+}
+
 /******** Tablet **********/
 @media screen and (max-width: 800px) {
-    body {
-        background-color: hotpink;
+       
+    /* Center top logo above nav */
+    header {
+        flex-direction: column;
+        align-items: center;
     }
+    .logo-top {
+        display: block;
+        width: 183px;
+        height: 36px;
+    }
+    .logo-corner {
+        display: none;
+    }
+
+    /* Remove big circle image */
+    .cta {
+        justify-content: center;
+    }
+    .cta img {
+        display: none;
+    }
+
 }
 
 /********* Mobile *********/
 @media screen and (max-width: 500px) {
-    body {
-        background-color: aquamarine;
+    
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    header nav a {
+        display: inline-block;
+        text-align: center;
+        font-size: 24px;
+        padding: 15px 250px;
+        width:100%;
+        border-top: 1px solid black;
+      }
+    header nav a:last-child {
+        border-bottom: 1px solid black;
+    }
+
+    .top-content, .bottom-content {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .main-content .top-content .text-content {
+        width: 96%;
+        margin-bottom: 15px;
+        font-size: 20pt;
+    }
+
+    .main-content .bottom-content .text-content {
+        width: 96%;
+        margin-bottom: 15px;
+        font-size: 20pt;
     }
 }
