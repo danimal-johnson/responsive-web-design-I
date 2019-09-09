@@ -173,3 +173,17 @@ ul {
 li {
   list-style-type: square;
 }
+
+/******** Tablet **********/
+@media screen and (max-width: 800px) {
+    body {
+        background-color: hotpink;
+    }
+}
+
+/********* Mobile *********/
+@media screen and (max-width: 500px) {
+    body {
+        background-color: aquamarine;
+    }
+}
