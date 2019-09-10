@@ -1,3 +1,257 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
 
+/*** Original CSS provided for project ***/
+.container {
+  width: 880px;
+  /* TB LR */
+  margin: 0 auto;
+}
+/* header */
+header nav {
+  display: inline-block;
+  width: 691px;
+  vertical-align: top;
+  margin-top: 35px;
+}
+header nav a {
+  margin-right: 65px;
+  font-size: 14px;
+  color: gray;
+  text-decoration: none;
+}
+header nav a:hover {
+  text-decoration: underline;
+}
+header nav a:first-child {
+  margin-left: 0;
+}
+header nav a:last-child {
+  margin-right: 0;
+}
+header .logo {
+  margin-top: 25px;
+}
+/* cta */
+.cta .cta-text {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 77px;
+  margin-top: 120px;
+  text-align: center;
+  padding: 0px 75px;
+}
+.cta .cta-text button {
+  background: white;
+  vertical-align: top;
+  margin-top: 6px;
+  padding: 8px 44px;
+  font-size: 17px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.cta .cta-text button:hover {
+  background: black;
+  color: white;
+}
+.cta img {
+  display: inline-block;
+  margin-top: 69px;
+}
+.main-content {
+  border-top: 1px solid black;
+  margin-top: 39px;
+  padding-top: 39px;
+}
+.main-content .top-content {
+  padding: 0 10px;
+}
+.main-content .top-content .text-content {
+  width: 410px;
+  display: inline-block;
+  margin-right: 34px;
+}
+.main-content .top-content .text-content:last-child {
+  margin-right: 0;
+}
+.main-content .middle-img {
+  margin-top: 45px;
+}
+.main-content .bottom-content {
+  margin-top: 37px;
+  padding: 0 10px;
+}
+.main-content .bottom-content .text-content {
+  width: 275px;
+  display: inline-block;
+  margin-right: 12px;
+}
+.main-content .bottom-content .text-content:last-child {
+  margin-right: 0;
+}
+.contact {
+  margin-top: 57px;
+  border-top: 1px solid black;
+  padding: 39px 10px 0;
+}
+.contact p {
+  margin: 20px 0;
+}
+footer {
+  margin: 32px 0;
+  text-align: center;
+  font-size: 14px;
+}
 
+/*** New Code ***/
+/* Replacing block elements with flex elements */
+
+header {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+}
+.cta {
+	display: flex;
+	justify-content: space-between;
+}
+
+.top-content {
+	display: flex;
+}
+
+.main-content {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.main-content#svcs {				/* The services page only */
+	justify-content: space-between;
+}
+
+.bottom-content {
+	display: flex;
+  flex-wrap: wrap;
+}
+
+.bottom-content-svcs {
+  display: flex;
+  flex-wrap: nowrap;
+  border-top: 1px solid black;
+  padding-top: 39px;
+}
+
+.bottom-content-svcs p {
+  padding-right: 30px;
+  line-height: 1.2;
+}
+
+.services-header-img {
+  padding: 20px 0;
+}
+
+.service {
+	width: 48%;
+	border: 1px solid black;
+	background: lightgray;
+	margin-bottom: 30px;
+	padding: 15px;
+}
+
+.service button {
+	background: white;
+	vertical-align: top;
+	margin-top: 12px;
+	font-size: 17px;
+	border: 1px solid black;
+	cursor: pointer;
+}
+
+ul {
+  margin-top: 20px;
+  margin-left: 20px;
+  line-height: 2;
+}
+
+li {
+  list-style-type: square;
+}
+
+/******* Responsive Design ********/
+.logo-top {
+    display: none;
+}
+.logo-corner {
+    width: 183px;
+    height: 36px;
+
+}
+
+/******** Tablet **********/
+@media screen and (max-width: 800px) {
+       
+    /* Center top logo above nav */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo-top {
+        display: block;
+        width: 183px;
+        height: 36px;
+    }
+    .logo-corner {
+        display: none;
+    }
+
+    /* Remove big circle image */
+    .cta {
+        justify-content: center;
+    }
+    .cta img {
+        display: none;
+    }
+
+}
+
+/********* Mobile *********/
+@media screen and (max-width: 500px) {
+    
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    header nav a {
+        display: inline-block;
+        text-align: center;
+        font-size: 24px;
+        padding: 15px 250px;
+        width:100%;
+        border-top: 1px solid black;
+      }
+    header nav a:last-child {
+        border-bottom: 1px solid black;
+    }
+
+    .top-content, .bottom-content {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .main-content .top-content .text-content {
+        width: 96%;
+        margin-bottom: 15px;
+        font-size: 20pt;
+    }
+
+    .main-content .bottom-content .text-content {
+        width: 96%;
+        margin-bottom: 15px;
+        font-size: 20pt;
+    }
+}
